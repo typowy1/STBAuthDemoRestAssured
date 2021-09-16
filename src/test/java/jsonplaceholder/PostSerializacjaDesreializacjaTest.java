@@ -54,6 +54,8 @@ public class PostSerializacjaDesreializacjaTest {
     @Test
     public void createPostDeserializacja(){ //zamiana json na clase, czyli dodamy pola jsona do pol klasy
 //pobieramy jsona obiektu post, zaminiemy go na obiekt klasy Post, wartosć pól JSOn są przypisane do pól klasy
+
+
         Post post = given() //utworzył się obiekt naszej klasy
                 .when()
                 .get("https://jsonplaceholder.typicode.com/posts/1")

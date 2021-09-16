@@ -20,6 +20,7 @@ public class OrganizationTest {
 
     private static Stream<Arguments> createOrganizationData() {
         return Stream.of(
+
                 Arguments.of("Diplay name", "Testowe", "imie testowe", "http://www.testowe.com"),
                 Arguments.of("Diplay name", "Testowe", "imie testowe", "https://www.testowe.com"),
                 Arguments.of("Diplay name", "Testowe", "imi", "https://www.testowe.com"),

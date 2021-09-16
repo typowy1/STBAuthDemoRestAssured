@@ -7,12 +7,14 @@ import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.given;
+import static org.assertj.core.api.Assertions.*;
 
 public class UserTest {
 
-    @Test
-    public void createNewUser(){
+    private Response response;
 
+    @Test
+    public void createNewUserWithDeserialization(){
         User user = new User();
         user.setName("Rafał Testowy");
         user.setUsername("TestTest");
@@ -30,17 +32,15 @@ public class UserTest {
         address.setCity("Warsaw");
         address.setZipcode("88-098");
         address.setGeo(geo);
-
         user.setAddress(address);
 
         Company company = new Company();
         company.setName("FirmaTestowa");
         company.setCatchPhrase("Blablabla");
         company.setBs("Tak tak tak");
-
         user.setCompany(company);
 
-        Response response = given()
+        response = given()
                 .contentType(ContentType.JSON)
                 .body(user)
                 .when()
@@ -50,8 +50,7 @@ public class UserTest {
                 .extract()
                 .response();
 
-        JsonPath jsonPath = response.jsonPath();
-        Assertions.assertThat(jsonPath.getString("name")).isEqualTo(user.getName());
-        System.out.println(response.prettyPrint());
+        User actualUser = response.as(User.class);
+        assertThat(actualUser.getName()).isEqualTo(user.getName());
     }
 }
