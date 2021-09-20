@@ -31,8 +31,8 @@ public class TwoObjects {
         firstGeo.setLng("81.1496");
 
         TOGeo secondGeo = new TOGeo();
-        secondGeo.setLat("-43.9509");
-        secondGeo.setLng("81.1496");
+        secondGeo.setLat("-555555");
+        secondGeo.setLng("77777");
 
         List<TOGeo> toGeos = new ArrayList<>();
         toGeos.add(firstGeo);
