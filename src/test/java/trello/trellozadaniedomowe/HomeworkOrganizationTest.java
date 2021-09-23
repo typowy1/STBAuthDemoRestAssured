@@ -17,8 +17,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class HomeworkOrganizationTest {
 
 
-    protected static final String KEY = "3dce6f67a1fc2ee98c14c98e1e310569";
-    protected static final String TOKEN = "773524badb9b285294a43350a4b640169c0f47cc729248cfd9251887527fd33e";
+    protected static final String KEY = "";
+    protected static final String TOKEN = "";
 
     private static Stream<Arguments> createOrganizationData() {
         return Stream.of(

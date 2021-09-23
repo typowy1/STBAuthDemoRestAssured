@@ -63,8 +63,10 @@ public class TwoObjects {
                 .extract()
                 .response();
 
+//        tu chyba będzie problem przy deserializacji?
         TOUser actualUser = response.as(TOUser.class);
         assertThat(actualUser.getToAddress().getToGeo().getLat()).isEqualTo(toUser.getToAddress().getToGeo().getLat());
+        assertThat(actualUser.getToCompany().getToGeo().getLat()).isEqualTo(toUser.getToAddress().getToGeo().getLat());
     }
 
 
